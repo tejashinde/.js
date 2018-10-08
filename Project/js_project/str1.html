@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <title>Javascript Method Demonstrations</title>
+    <link href="assets/css/googleFont.css" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="assets/vendor/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/ghpages-materialize.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css"/>
+    <script type="text/javascript" src="js/func.js"></script>
+
+    <script>
+
+        function displaycharat() {
+            var x = document.getElementById("char_at").value.toString();
+            var y = parseInt(document.getElementById("charat_val").value);
+            if(x.length==0)
+            {
+                document.getElementById("theOutputString").innerHTML = "<font style='color:indianred'>Please Enter Some Text</font>";
+            }
+            else if(y.toString()!="NaN" && y<=x.length-1)
+            {
+                var n = x.charAt(y);
+                document.getElementById("theOutputString").innerHTML = "Character At Index : <b>" + y +"</b> is <b>"+ n +"</b>";
+            }
+            else if(y>x.length-1)
+            {
+                document.getElementById("theOutputString").innerHTML = "Sorry, But The Entered String Doesn't Has The Index "+y+". The Indexs For The Entered String is From 0 to "+x.length;
+            }
+            else
+            {
+                document.getElementById("theOutputString").innerHTML = "<font style='color:indianred'>Either You Havn't Provided an Index Or You've Entered A Invalid Index</font>";
+            }
+        }
+</script>
+</head>
+
+<body onload="showCode()">
+<!-- Begin Header -->
+<header>
+    <!-- Navigation Menu -->
+    <nav class="top-nav">
+        <div class="container">
+            <div class="nav-wrapper"><a class="page-title">String Method - I</a></div>
+        </div>
+    </nav>
+    <!-- Mobile Menu Navigation Icon -->
+    <div class="container">
+        <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+            <i class="mdi-navigation-menu"></i></a>
+    </div>
+    <!-- End Mobile Menu Navigation Icon -->
+    <ul id="nav-mobile" class="side-nav fixed" style="width: 240px;">
+        <li class="logo"><a id="logo-container" href="index.html" class="brand-logo">
+            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg"><b>Javascript Methods</b></object></a></li>
+        <li class="bold"><a href="str1.html" class="waves-effect waves-teal">String Method - I</a></li>
+        <li class="bold"><a href="str2.html" class="waves-effect waves-teal">String Method - II</a></li>
+        <li class="bold"><a href="arr1.html" class="waves-effect waves-teal">Array Method - I</a></li>
+        <li class="bold"><a href="arr2.html" class="waves-effect waves-teal">Array Method - II</a></li>
+        <li class="bold"><a href="date1.html" class="waves-effect waves-teal">Date Method - I</a></li>
+        <li class="bold"><a href="date2.html" class="waves-effect waves-teal">Date Method - II</a></li>
+    </ul>
+    <!-- End Navigation Menu -->
+</header>
+<!-- End Header -->
+
+<!-- Begin Main -->
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m9 l10">
+                <div id="charat" class="section scrollspy">
+                    <h4>The charAt Method</h4>
+                    <p>The following form demonstrates the charAt Method.</p><br />
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="char_at" type="text" placeholder="Please Enter Text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="charat_val" type="text" placeholder="Please Enter A Number">
+                            </div>
+                        </div>
+                    </form>
+                    <button class="waves-effect waves-light btn" onclick="displaycharat();"><i class="material-icons left">< ></i>Display Output</button><br/>
+                    <p id="theOutputString"></p>
+
+                </div>
+
+            </div>
+        </div>
+        <div style="width:100%;padding:5px;">
+            <div class="sourceTitle">
+                The Logic Behind
+            </div>
+            <div id="sourceCode">
+            </div>
+        </div>
+    </div>
+</main>
+<!-- End Main -->
+</body>
+</html>

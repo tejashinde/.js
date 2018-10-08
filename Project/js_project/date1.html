@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <title>Javascript Method Demonstrations</title>
+    <link href="assets/css/googleFont.css" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="assets/vendor/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/ghpages-materialize.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css"/>
+    <script type="text/javascript" src="js/func.js"></script>
+    <script>
+
+        function displaydate()
+        {
+            var st=Date();  //Gettig The Date Of The Client's System
+            st=st.replace('(','');  //Removing The Braces
+            st=st.replace(')','');
+            st=st.split(' ');   //Dividing The Date Into Different Parts
+
+            document.getElementById("theOutputString").innerHTML = "Time According To Your <b>System</b> is : <br/>";
+            document.getElementById("theOutputString").innerHTML+= "Date : "+st[1]+" "+st[2]+"<sup>"+getSuffix(st[2])+"</sup> "+st[3];
+            document.getElementById("theOutputString").innerHTML+= "<br/>Day : "+st[0];
+            document.getElementById("theOutputString").innerHTML+= "<br/>Time : "+st[4];
+            document.getElementById("theOutputString").innerHTML+= "<br/>Time - Zone : "+st[6]+" "+st[7]+" "+st[8];
+            setTimeout(displaydate,500)
+        }
+
+    </script>
+</head>
+
+<body onload="showCode()">
+<!-- Begin Header -->
+<header>
+    <!-- Navigation Menu -->
+    <nav class="top-nav">
+        <div class="container">
+            <div class="nav-wrapper"><a class="page-title">Date Method - I</a></div>
+        </div>
+    </nav>
+    <!-- Mobile Menu Navigation Icon -->
+    <div class="container">
+        <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+            <i class="mdi-navigation-menu"></i></a>
+    </div>
+    <!-- End Mobile Menu Navigation Icon -->
+    <ul id="nav-mobile" class="side-nav fixed" style="width: 240px;">
+        <li class="logo"><a id="logo-container" href="index.html" class="brand-logo">
+            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg"><b>Javascript Methods</b></object></a></li>
+        <li class="bold"><a href="str1.html" class="waves-effect waves-teal">String Method - I</a></li>
+        <li class="bold"><a href="str2.html" class="waves-effect waves-teal">String Method - II</a></li>
+        <li class="bold"><a href="arr1.html" class="waves-effect waves-teal">Array Method - I</a></li>
+        <li class="bold"><a href="arr2.html" class="waves-effect waves-teal">Array Method - II</a></li>
+        <li class="bold"><a href="date1.html" class="waves-effect waves-teal">Date Method - I</a></li>
+        <li class="bold"><a href="date2.html" class="waves-effect waves-teal">Date Method - II</a></li>
+    </ul>
+    <!-- End Navigation Menu -->
+</header>
+<!-- End Header -->
+
+<!-- Begin Main -->
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m9 l10">
+                <div id="date1" class="section scrollspy">
+                    <h4>The Date Method</h4>
+                    <p>The following form demonstrates the Date Method.</p><br />
+
+                    <p id="theOutputString"></p>
+
+                </div>
+
+            </div>
+        </div>
+        <div style="width:100%;padding:5px;">
+            <div class="sourceTitle">
+                The Logic Behind
+            </div>
+            <div id="sourceCode">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">displaydate()</script>
+</main>
+<!-- End Main -->
+</body>
+</html>

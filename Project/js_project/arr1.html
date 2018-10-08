@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="assets/css/googleFont.css" rel="stylesheet">
+    <title>Javascript Method Demonstrations</title>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="assets/vendor/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/ghpages-materialize.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css"/>
+    <script type="text/javascript" src="js/func.js"></script>
+
+    <script>
+    function isNotEmpty(val)
+    {
+        if(val.length==0)
+            return false;
+        else
+            return true;
+    }
+    function reverse() {
+        var x=document.getElementsByTagName('input');
+        var arr=new Array();
+        for(i=0;i<x.length;i++)
+        {
+            if(isNotEmpty(x[i].value))
+            {
+                arr.push(x[i].value)
+            }
+        }
+        if(arr.length>2)
+        {
+            var n = arr;
+            document.getElementById("theOutputString").innerHTML = "Reverse Of <b>"+n+"<b/> is <b>" + n.reverse() +"</b>";
+        }
+        else
+        {
+            document.getElementById("theOutputString").innerHTML = "<font style='color:indianred'>Please Enter <b>Atleast</b> Two Values To Reverse</font>";
+        }
+    }
+    </script>
+
+
+</head>
+
+<body onload="showCode()">
+<!-- Begin Header -->
+<header>
+    <!-- Navigation Menu -->
+    <nav class="top-nav">
+        <div class="container">
+            <div class="nav-wrapper"><a class="page-title">Array Method - I</a></div>
+        </div>
+    </nav>
+    <!-- Mobile Menu Navigation Icon -->
+    <div class="container">
+        <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+            <i class="mdi-navigation-menu"></i></a>
+    </div>
+    <!-- End Mobile Menu Navigation Icon -->
+    <ul id="nav-mobile" class="side-nav fixed" style="width: 240px;">
+        <li class="logo"><a id="logo-container" href="index.html" class="brand-logo">
+            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg"><b>Javascript Methods</b></object></a></li>
+        <li class="bold"><a href="str1.html" class="waves-effect waves-teal">String Method - I</a></li>
+        <li class="bold"><a href="str2.html" class="waves-effect waves-teal">String Method - II</a></li>
+        <li class="bold"><a href="arr1.html" class="waves-effect waves-teal">Array Method - I</a></li>
+        <li class="bold"><a href="arr2.html" class="waves-effect waves-teal">Array Method - II</a></li>
+        <li class="bold"><a href="date1.html" class="waves-effect waves-teal">Date Method - I</a></li>
+        <li class="bold"><a href="date2.html" class="waves-effect waves-teal">Date Method - II</a></li>
+    </ul>
+    <!-- End Navigation Menu -->
+</header>
+<!-- End Header -->
+
+<!-- Begin Main -->
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m9 l10">
+                <div id="arr1" class="section scrollspy">
+                    <h4>The reverse Method</h4>
+                    <p>The following form demonstrates the reverse Method.</p><br />
+                    <form class="col s12" onsubmit="reverse()">
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <input id="ele1" type="text" placeholder="Enter Text">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele2" type="text" placeholder="Enter Text">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele3" type="text" placeholder="Enter Text">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele4" type="text" placeholder="Enter Text">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele5" type="text" placeholder="Enter Text">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele6" type="text" placeholder="Enter Text">
+                            </div>
+                        </div>
+                    </form>
+                    <button class="waves-effect waves-light btn" onclick="reverse();"><i class="material-icons left">< ></i>Display Output</button><br/>
+                    <p id="theOutputString"></p>
+
+                </div>
+
+            </div>
+        </div>
+        <div style="width:100%;padding:5px;">
+            <div class="sourceTitle">
+                The Logic Behind
+            </div>
+            <div id="sourceCode">
+            </div>
+        </div>
+    </div>
+    </main>
+<!-- End Main -->
+</body>
+</html>

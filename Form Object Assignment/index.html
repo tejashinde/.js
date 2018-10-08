@@ -1,0 +1,28 @@
+<!--
+Create a form which has a list and a button
+Populate the list with few items, when the user clicks on the item, the selected item from the list should be displayed
+-->
+<html>
+  <head>
+    <script type = "text/javascript">
+    function createItems()
+    {
+      var product = document.getElementById("select").value;
+      alert(product);
+    }
+    </script>
+  </head>
+<body>
+  <form name = "form">
+    <select id = "select">
+      <option name = "Button"> Button </option>
+      <option name = "TextBox"> TextBox </option>
+      <option name = "Button"> CheckBox </option>
+      <option name = "Button"> Radio Button </option>
+    </select>
+    <div name = "setItem">
+    </div>
+    <input type = "submit" name = "submit" value = "Create Item" onclick = "createItems()">
+  </form>
+</body>
+</html>

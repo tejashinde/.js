@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+    <main>
+          <div id="arr1">
+                <p>function isNotEmpty(val)<br>
+                {<br>
+                    if(val.length==0)<br>
+                        return false;<br>
+                    else<br>
+                        return true;<br>
+                }<br>
+                function reverse() {<br>
+                    var x=document.getElementsByTagName('input');<br>
+                    var arr=new Array();<br>
+                    for(i=0;i<x.length;i++)<br>
+                    {<br>
+                        if(isNotEmpty(x[i].value))<br>
+                        {<br>
+                            arr.push(x[i].value)<br>
+                        }<br>
+                    }<br>
+                    if(arr.length>1)<br>
+                    {<br>
+                        var n = arr;<br>
+                        document.getElementById("theOutputString").innerHTML = "Reverse Of <b>" + n + " is " + n.reverse() +"</b>";<br>
+                    }<br>
+                    else<br>
+                    {<br>
+                        document.getElementById("theOutputString").innerHTML = "<font style='color:red'>Please Enter <b>Atleast</b> Two Values To Reverse</font>";<br>
+                    }<br>
+                }<br>
+                </p><br />
+          </div>
+    </main>
+    <footer>
+            <div>
+                 Created by Tejas
+            </div>
+    </footer>
+<center>
+</body>
+</html>

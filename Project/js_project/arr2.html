@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <title>Javascript Method Demonstrations</title>
+    <link href="assets/css/googleFont.css" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="assets/vendor/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/ghpages-materialize.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css"/>
+    <script type="text/javascript" src="js/func.js"></script>
+
+    <script>
+
+        function sort() {
+            var x=document.getElementsByTagName('input');
+            var arr=new Array();
+            var st=0;       //This Stores The Homogenousity of The Array
+            for(i=0;i<x.length;i++)
+            {
+                var val=x[i].value;
+                if(isNotEmpty(val))
+                {
+                    arr.push(val);
+                    if(val.search(/[^0-9]/)>=0)
+                    {
+                        st=1;
+                    }
+                }
+            }
+            if(arr.length>2)
+            {
+                if(st==1)
+                {
+                    //This Block Is Executed WhenAny Of The Input Has Anything Other Than Numbers
+                    arr=arr.sort(); //Sorts According to the ASCII Codes, By The Build in Function
+
+                    arr="Array Has Been Sorted According To The ASCII Values, Sorted Array : <b>"+arr+"</b>";
+                }
+                else
+                {
+                    //This Block Is Executed When All The Inputs Are Numbers
+                    arr=numberSort(arr);    //Sorts According to the BubbleSort Method
+                    arr="Array Has Been Sorted According To The Bubble Sort Method, Sorted Array : <b>"+arr+"</b>";
+                }
+                document.getElementById('theOutputString').innerHTML=arr;
+            }
+            else
+            {
+                document.getElementById('theOutputString').innerHTML="<font style='color:indianred'>Please Enter At least Two Values For Perform Sort</font>";
+            }
+        }
+        function numberSort(arr)
+        {
+        //This Function Sorts an array using the bubble Sort technique
+            var i,j,l=arr.length;
+            for(i=0;i<l;i++)
+            {
+                //This Loop Converts The Strings To The Integers
+                arr[i]=parseFloat(arr[i]);
+            }
+            var i,j,l=arr.length;
+            for(i=0;i<l-1;i++)
+            {
+                for(j=0;j<l-i-1;j++)
+                {
+                    if (arr[j]>arr[j+1])
+                    {
+                        //Swap The Values
+                        temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+
+    </script>
+</head>
+
+<body onload="showCode()">
+<!-- Begin Header -->
+<header>
+    <!-- Navigation Menu -->
+    <nav class="top-nav">
+        <div class="container">
+            <div class="nav-wrapper"><a class="page-title">Array Method - II</a></div>
+        </div>
+    </nav>
+    <!-- Mobile Menu Navigation Icon -->
+    <div class="container">
+        <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+            <i class="mdi-navigation-menu"></i></a>
+    </div>
+    <!-- End Mobile Menu Navigation Icon -->
+    <ul id="nav-mobile" class="side-nav fixed" style="width: 240px;">
+        <li class="logo"><a id="logo-container" href="index.html" class="brand-logo">
+            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg"><b>Javascript Methods</b></object></a></li>
+        <li class="bold"><a href="str1.html" class="waves-effect waves-teal">String Method - I</a></li>
+        <li class="bold"><a href="str2.html" class="waves-effect waves-teal">String Method - II</a></li>
+        <li class="bold"><a href="arr1.html" class="waves-effect waves-teal">Array Method - I</a></li>
+        <li class="bold"><a href="arr2.html" class="waves-effect waves-teal">Array Method - II</a></li>
+        <li class="bold"><a href="date1.html" class="waves-effect waves-teal">Date Method - I</a></li>
+        <li class="bold"><a href="date2.html" class="waves-effect waves-teal">Date Method - II</a></li>
+    </ul>
+    <!-- End Navigation Menu -->
+</header>
+<!-- End Header -->
+
+<!-- Begin Main -->
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m9 l10">
+                <div id="arr2" class="section scrollspy">
+                    <h4>The sort Method</h4>
+                    <p>The following form demonstrates the sort Method.</p><br />
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <input id="ele1" type="text" placeholder="EnterText">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele2" type="text" placeholder="EnterText">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele3" type="text" placeholder="EnterText">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele4" type="text" placeholder="EnterText">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele5" type="text" placeholder="EnterText">
+                            </div>
+                            <div class="input-field col s2">
+                                <input id="ele6" type="text" placeholder="EnterText">
+                            </div>
+                        </div>
+                    </form>
+                    <button class="waves-effect waves-light btn" onclick="sort();"><i class="material-icons left">< ></i>Display Output</button><br/>
+                    <p id="theOutputString"></p>
+
+                </div>
+
+            </div>
+        </div>
+        <div style="width:100%;padding:5px;">
+            <div class="sourceTitle">
+                The Logic Behind
+            </div>
+            <div id="sourceCode">
+            </div>
+        </div>
+    </div>
+</main>
+<!-- End Main -->
+</body>
+</html>

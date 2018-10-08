@@ -1,0 +1,16 @@
+ Display a message "Welcome!!!" on your webpage and when the user hovers over the message, a popup should be displayed with a message "Welcome to my WebPage!!!".
+<html>
+	<head>
+	<title>Event!!!</title>
+	<script type="text/javascript">
+	function trigger()
+	{
+document.getElementById("hover").addEventListener("mouseover", popup);
+	function popup()
+	{	alert("Welcome to my WebPage!!!");	}
+	}
+	</script>
+	<body  onload="trigger();">
+	<p id="hover">Welcome!!!</p>
+	</body>
+	</html>

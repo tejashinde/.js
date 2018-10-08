@@ -1,0 +1,12 @@
+.sourceTitle
+{
+    background-color: #0288d1;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+}
+main
+{
+    background-image: url("../images/background.png");
+}
